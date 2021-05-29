@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" name="" id="item">
+    <input type="text" name="" id="amount">
+    <button onclick="f()">Add to list</button>
+    <div id="total"></div>
+    <div id="record"></div>
+
+    <script>
+        var sum = 0
+        function f(){
+            if(isNaN(amount.value)){
+                console.log("nope")
+                reset()
+            }else{
+                record.innerHTML += "<br>" + item.value + " &nbsp " + amount.value  
+                // console.log("<p>" + item.value + " &nbsp " + amount.value + "</p>")
+                sum += Number(amount.value)
+                total.innerHTML = sum
+                // console.log(sum)        
+                reset()      
+            }
+        }
+
+        function reset(){
+            amount.value = ""
+            item.value = ""
+        }
+    </script>
+</body>
+</html>
