@@ -1,0 +1,16 @@
+.section {
+    @include flex-mod(rgb(44, 156, 113));
+    
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    p {
+        background-color: $p_bgcol;
+        padding: 20px;
+        transition: 0.9s ease;
+        &:hover {
+            background-color: chocolate;
+        }
+
+    }
+}

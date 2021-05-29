@@ -1,0 +1,17 @@
+$p_bgcol: rgb(69, 125, 177);
+
+@mixin flex-mod($bgcol) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: $bgcol;
+}
+
+@import "section1";
+@import "section2";
+
+// body {
+//     background-color: bisque;
+// }
