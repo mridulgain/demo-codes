@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function getRandomInt(max_limit){
+            // console.log(Math.floor(Math.random() * max_limit))
+            return Math.floor(Math.random() * max_limit)
+        }
+
+        function setColor(){
+            var r = getRandomInt(255)
+            var g = getRandomInt(255)
+            var b = getRandomInt(255)
+
+            var color = "rgb(" + r + "," + g + "," + b + ")"
+            document.body.style.backgroundColor = color 
+            document.getElementById("rgb_code").innerHTML = color
+        }
+    </script>
+</head>
+<body>
+    <button onclick="setColor()">Click !</button>
+    <p id="rgb_code"></p>
+</body>
+</html>

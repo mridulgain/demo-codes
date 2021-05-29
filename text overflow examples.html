@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text overflow examples</title>
+    <style>
+        p {
+            padding: 10px;
+            width: 200px;
+            background-color: gray;
+        }
+        /* sample1 */
+        .nowrap {
+            white-space: nowrap;
+        }
+        .overflow {
+            margin-left: 100px;
+        }
+        .overflow p {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .clipped {
+            text-overflow: clip;
+        }
+        .ellipsis {
+            text-overflow: ellipsis;
+        }
+        /* sample2 */
+        .sample2 {
+            border-style: solid;
+            padding: 40px;
+        }
+        .normal_wrap {
+            word-wrap: normal;
+        }
+        .wordwrap {
+            word-wrap: break-word;
+        }
+        /* sample 3 */
+        .break-all {
+            width: 150px;
+            padding: 10px;
+            word-break: break-all;
+        }
+        .keep-all {
+            width: 150px;
+            padding: 10px;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="sample1">
+        <h3>Default situation</h3>
+        <p class="default">this unnecessary extra long text can't be fitted within this line</p>
+        <h3>Forcing nowrap</h3>
+        <p class="nowrap">this unnecessary extra long text can't be fitted within this line</p>
+        <h3>Hiding text overflow</h3>
+        <div class="overflow">
+            <h4>text-overflow: clip</h4>
+            <p class="clipped">this unnecessary extra long text can't be fitted within this line</p>
+            <h4>text-overflow: ellipsis</h4>
+            <p class="ellipsis">this unnecessary extra long text can't be fitted within this line</p>
+        </div>
+    </div>
+    <div class="sample2">
+        <h3>wordwrap normal vs break-word</h3>
+        <p class="normal_wrap">you are seeing a super long tttttttttttttttttttttttttttttttttttttttttext which can't be fitted within this paragraph</p>
+        <p class="wordwrap">you are seeing a super long tttttttttttttttttttttttttttttttttttttttttext which can't be fitted within this paragraph</p>
+    </div>
+    <div class="sample3">
+        <h3>break lines within words</h3>
+        <p class="break-all">The line of this paragraph may break at any character.</p>
+	    <p class="keep-all  ">The line of this paragraph will not break at any charecter.</p>
+    </div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>text-overflow property</title>
+<style>
+    p {
+        width: 200px;
+        padding: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        background: #f2f2f2;
+    }
+    p.clipped {
+        text-overflow: clip;
+    }
+    p.ellipses {
+        text-overflow: ellipsis;
+    }
+</style>
+</head>
+<body>
+	<h1>Text-overflow Effect</h1>        
+	<h2>Clip the text at the limit of the content area</h2>
+    <p class="clipped">CSS is a Style Sheet Language for formatting the document content 
+     (written in HTML or other markup language). You might be interested 
+     by the CSS Working Group wiki too.</p>
+    <h2>Render an ellipsis ("...") to represent clipped text</h2>
+    <p class="ellipses">CSS is a Style Sheet Language for formatting the document content 
+     (written in HTML or other markup language). You might be interested 
+     by the CSS Working Group wiki too.</p>
+</body>
+</html> -->

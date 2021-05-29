@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <style>
+        .calender{
+            text-align: center;
+            /* border-style: solid; */
+            box-shadow: 10px 10px 8px grey;
+            width: 200px;
+        }
+        .calender div{
+           /* border-style: solid; */
+           text-align: center;
+        }
+        #date{
+            font-size: 80px;
+            background-color: teal;
+            padding: 40px;
+            color: white;
+        }
+        #full-date{
+            padding: 15px;
+        }
+        .control {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calender">
+        <div id="date"></div>
+        <div id="full-date"></div>
+    </div>
+    <div class="control">
+        <button id="next">Next</button>
+        <button id="previous">Previous</button>
+    </div>
+</body>
+<script>
+    var d = new Date()
+    function setCal(){
+        document.getElementById("date").innerText = d.getDate();
+        document.getElementById("full-date").innerText = d.toDateString();
+    }
+    document.onload = setCal(d)
+    document.getElementById("next").onclick = function (){
+        nextDay = d.getDate() + 1
+        d.setDate(nextDay)
+        setCal()
+    }
+    document.getElementById("previous").onclick = function (){
+        lastDay = d.getDate() - 1
+        d.setDate(lastDay)
+        setCal()
+    }
+</script>
+</html>

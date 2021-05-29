@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Canteen</h1>
+    <p>Monday through Friday</p>
+    <p>7AM to 10AM</p>
+    <p>Breakfast, snacks, juice</p>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>Order info</legend>
+            <label>Name: <input type="text" name="" id=""></label><br>
+            <label for="ordertype">Takeaway</label>
+            <input type="radio" name="ordertype" id="take_away">
+            <label for="ordertype">Dine</label>
+            <input type="radio" name="ordertype" id="dine">
+        </fieldset>
+        <fieldset>
+            <legend>Snacks</legend>
+
+            <input type="checkbox" name="pizza" id="pizza"> <label for="pizza">Pizza</label>
+            <label for="size">Size:</label>
+            <select name="size" id="size">
+                <option value="Regular" >Regular</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select><br>
+
+            <input type="checkbox" name="sandwitch" id="sandwitch">
+            <label for="sandwitch">Sandwitch</label>
+            <select name="bread" id="">
+                <option value="normal" >normal</option>
+                <option value="brown">brown bread</option>
+            </select><br>
+
+            <label for="dosa"><input type="checkbox" name="dosa" id="dosa"> Dosa</label>
+            <select name="dosa_type" id="">
+                <option value="egg" >With egg</option>
+                <option value="eggless">Without egg</option>
+            </select><br>
+
+        </fieldset>
+        <fieldset>
+            <legend>Fruits</legend>
+
+            <input type="checkbox" name="apple" id="">
+            <label for="apple">Apple</label><br>
+
+            <input type="checkbox" name="banana" id="sandwitch">
+            <label for="banana">Banana</label><br>
+
+            <input type="checkbox" name="orange" id="">
+            <label for="orange"> Orange</label>
+            
+
+        </fieldset>
+        <fieldset>
+            <legend>Drinks</legend>
+            <label for="drinks">Drinks</label>
+            <select name="drinks" id="drinks">
+                <option value="tea">Tea</option>
+                <option value="coffee">Cofee</option>
+                <option value="lassi">Lassi</option>
+                <option value="lassi">Milk</option>
+            </select>
+        </fieldset>
+        <input type="submit" name="order" id="" value="Place order">
+    </form>
+</body>
+</html>

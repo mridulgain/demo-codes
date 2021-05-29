@@ -1,0 +1,13 @@
+https://zoom.us/j/98629666549?pwd=ZFVKUlhwZGpZNXJtb0tFMEx1NWdZUT09
+
+Meeting ID: 986 2966 6549
+Passcode: Lw51ZF
+
+
+break & continue (done)
+events (w3school) (while studying dom)
+function expression (done) 
+let & var()
+
+regex
+eventhandler vs listener

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(i){
+            // console.log(user_input).value
+            // document.getElementById("user_input").value
+            if(i % 2 == 0){
+                console.log("Even")
+            }
+            else{
+                console.log("Odd")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="user_input" >
+    <button onclick="check(user_input.value)">Check</button>
+    <input type="text" name="" id="user_input2">
+    <button onclick="check(user_input2.value)">Check</button>
+</body>
+</html>

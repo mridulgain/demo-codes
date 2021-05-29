@@ -1,0 +1,8 @@
+.section2 {
+    @include flex-mod(rgb(233, 157, 134));
+    padding: 20px;
+    text-align: center;
+    p {
+        background-color: $p_bgcol;
+    }
+}

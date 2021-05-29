@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x = new Date()
+        var y = x.getDay()
+        // var y = -1
+
+        switch(y){
+            case 1:
+                putDay("Monday")
+                break;
+            case 2:
+                putDay("Tue")
+                break;
+            case 3:
+                putDay("Wed")
+                break;
+            case 4:
+                putDay("Thu")
+                break;
+            case 5:
+                putDay("Fri")
+                break;
+            case 6:
+                putDay("Sat")
+                break;
+            case 0:
+                putDay("Sun")
+                break;
+            default:
+                console.log("Wrong input")
+        }
+        // if(console.log("1")||y == 1 ){
+        //     putDay("Monday")
+        // }else if(console.log("2")||y == 2){
+        //     putDay("Tuesday")
+        // }else if(console.log("3")||y == 3){
+        //     putDay("Wednesday")
+        // }else if(console.log("4")|| y == 4 ){
+        //     putDay("Thursday")
+        // }else if(console.log("5")||y == 5){
+        //     putDay("Friday")
+        // }else if(console.log("6")||y == 6){
+        //     putDay("Saturday")
+        // }else if(console.log("0")||y == 7){
+        //     putDay("Sunday")
+        // }
+        
+        // if(console.log("1")||y == 1 ){
+        //     putDay("Monday")
+        // }  
+        // if(console.log("2")||y == 2){
+        //     putDay("Tuesday")
+        // }  
+        // if(console.log("3")||y == 3){
+        //     putDay("Wednesday")
+        // }  
+        // if(console.log("4")|| y == 4 ){
+        //     putDay("Thursday")
+        // }  
+        // if(console.log("5")||y == 5){
+        //     putDay("Friday")
+        // }  
+        // if(console.log("6")||y == 6){
+        //     putDay("Saturday")
+        // }  
+        // if(console.log("0")||y == 7){
+        //     putDay("Sunday")
+        // }
+        
+
+        function putDay(day){
+            document.write("<h1>Today is : ", day, "</h1>");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="" onchange="console.log(this.value)">
+</body>
+</html>

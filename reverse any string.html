@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Document</title>
+    <style>
+        #body{
+            background-image: linear-gradient(to right, #44a08D, #093637);
+        }
+        h1{
+            text-align: center;
+            margin: 50px auto;
+            color: lightpink;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+        form{
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+        }
+        #result{
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1><b><u><i>REVERSE NUMBER USING JAVASCRIPT</i></u></b></h1>
+    <form id="form">
+        <input type="text" name="" id="number"><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    <P id="result"></P>
+
+    <script>
+        var frm = document.getElementById("form");
+        frm.onsubmit=function(){
+            var user = document.getElementById("number").value;
+            var preview = document.getElementById("result");
+            // var i,rev=0;
+            console.log(typeof user)
+            // while (user !=0) {
+            //     rev=(rev*10)+(user%10)
+            //     user= (user/10)
+            // }
+            digits = user.split("")
+            console.log(digits)
+            for(let i = digits.length - 1; i >= 0; i--){
+                preview.innerHTML += digits[i];
+            }
+            // preview.innerHTML=rev;
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>background attachment</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        div {
+            height: 400px;
+            width: 400px;
+            border-style: solid;
+            margin-top: 60px;
+        }
+        #without-shorthand {
+            height: 400px;
+            width: 400px;
+            background-color: brown;
+            background-image: url(pattern.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 250px 25px;
+        }
+        #with-shorthand {
+            
+            background: brown url("pattern.png") no-repeat fixed 250px 150px;
+        }
+    </style>
+</head>
+<body>
+    <p id="without-shorthand">kljhsdkjhsfdkj</p>
+    <div id="with-shorthand">fgssfgsf</div>
+</body>
+</html>

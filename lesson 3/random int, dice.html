@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function dice(){
+            // console.log(Math.ceil(Math.random() * 6))
+            document.getElementById("output").innerHTML = Math.ceil(Math.random() * 6)
+        }
+
+        function getRandomInt(max_limit){
+            // console.log(Math.floor(Math.random() * max_limit))
+            document.getElementById("output").innerHTML = Math.floor(Math.random() * max_limit)
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dice()">Dice!</button>
+    <input type="text" name="" id="user_input"> 
+    <button onclick="getRandomInt(document.getElementById('user_input').value)">Get a random int</button>
+    <div id="output"></div>
+</body>
+</html>

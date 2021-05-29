@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>background</title>
+    <style>
+        body {
+            background-image: url(day.jpg);
+            background-attachment: fixed;
+        }
+        #demo-bgcolor {
+            float: none;
+            background-color: tan;
+            padding: 10px;
+            width: 500px;
+            text-align: center;
+        }
+        .container {
+            margin-bottom: 10px;
+            border-style: solid;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-gap: 10px;
+        }
+        .part1 {
+            border-style: solid;
+            height: 300px;
+            width: 300px;
+        }
+        .demo-repeat {
+            background-image: url(pattern.png);
+            background-repeat: space;
+            /* background-position: center; */
+        }
+        .demo-position {
+            background-image: url(pattern.png);
+            background-repeat: no-repeat;
+            /* background-position: bottom right; */
+            /* background-position: center; */
+            background-position: 100px 0;
+        }
+        .demo-bgsize {
+            background-image: url('pattern.jpg');
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+        }
+        .demo-clip {
+            border-style: dashed;
+            border-width: 16px;
+            height: 250px;
+            width: 250px;
+            background: orange;
+            padding: 10px;
+        }
+        .clip1 {
+            background-clip: border-box;
+        }
+        .clip2 {
+            background-clip: padding-box;
+        }
+        .clip3 {
+            background-clip: content-box;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="demo-bgcolor"> bgcolor: tan </h1>
+    <div class="container">
+ 
+        <h3>bg repeat</h3>
+        <h3>bg position</h3>
+        <h3>bg size</h3>
+        <div class="part1 demo-repeat"></div>
+ 
+        <div class="part1 demo-position"></div>
+ 
+        <div class="part1 demo-bgsize"></div>
+
+
+        <h3>bg clip</h3>
+        <h3></h3>
+        <h3></h3>
+
+        <div class="demo-clip">default</div>
+        <div class="demo-clip clip1">border-box</div>
+        <div class="demo-clip clip2">padding-box</div>
+        <div class="demo-clip clip3">content-box</div>
+    </div>
+    <div id="long-text"></div>
+</body>
+<script>
+    // for(i = 0; i <= 50; i ++){
+    //     document.getElementById('long-text').innerHTML += "Background attachment demo<br>";
+    // } 
+</script>
+</html>

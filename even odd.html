@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function task(l, r, sw) {
+            // l = ll.value
+            // r = ul.value
+            // sw = document.getElementsByName("choice")
+            even = sw[0].checked
+            odd = sw[1].checked
+
+            tmp = l
+            if(even){
+                console.log("Even values")
+                while(tmp <= r){
+                    if(tmp % 2 == 0){
+                        console.log(tmp)
+                    }
+                    tmp++
+                }
+            }else{
+                console.log("Odd values")
+                while(tmp <= r){
+                    if(tmp % 2 != 0){
+                        console.log(tmp)
+                    }
+                    tmp++
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="ll">Start</label>
+    <input type="text" name="" id="ll">
+    <label for="ul">End</label>
+    <input type="text" name="" id="ul">
+    <label for="choice">Even</label>
+    <input type="radio" name="choice" id="even">
+    <label for="choice">Odd</label>
+    <input type="radio" name="choice" id="odd">
+    <button id="print" onclick="task(ll.value, ul.value, document.getElementsByName('choice'))">
+        Print
+    </button>
+
+</body>
+</html>

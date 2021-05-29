@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="resources/">
+    <title>gradient</title>
+</head>
+<style>
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    padding: 1em;
+}
+.sample {
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+}
+.top-bottom {
+    background: linear-gradient(red, yellow);
+}
+.left-right {
+    background: linear-gradient(to right, skyblue, yellow);
+}
+.diagonal {
+    background: linear-gradient(to top right, red, ivory);
+}
+.cuatom-angel {
+    background: linear-gradient(360deg, green, yellow);
+}
+.multicolor {
+    background: linear-gradient(blue, green, red);
+}
+.color-stop {
+    background: linear-gradient(blue, green 30%, red 60%);
+}
+.repeating-gradient {
+    background: repeating-linear-gradient(white, black 10%);
+}
+.radial-gradient {
+    background: radial-gradient(red, green, black);
+}
+.radial-gradient-position {
+    /* circle, ellipse */
+    background: radial-gradient(circle farthest-side at left bottom, orange, magenta, yellow);
+}
+.repeating-radial-gradient {
+    color: white;
+    background: repeating-radial-gradient(black, red 10%);
+}
+.gradient-with-transparency {
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)), url("day.jpg");
+    background-size: cover;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="sample top-bottom">Default top-bottom</div>
+        <div class="sample left-right">left-right</div>
+        <div class="sample diagonal">Diagonal</div>
+        <div class="sample cuatom-angel">custom-angel: 36&deg</div>
+        <div class="sample multicolor">multicolor</div>
+        <div class="sample color-stop">color-stop</div>
+        <div class="sample repeating-gradient">repeating-gradient</div>
+        <div class="sample radial-gradient">radial-gradient</div>
+        <div class="sample radial-gradient-position">radial-gradient from left corner</div>
+        <div class="sample repeating-radial-gradient">reapting radial-gradient</div>
+        <div class="sample gradient-with-transparency">gradient with transparency</div>
+    </div>
+</body>
+</html>
