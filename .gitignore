@@ -1,0 +1,7 @@
+env/
+db.sqlite3
+.DS_Store
+blog/__pycache__/
+blog/migrations/
+myapp/migrations/
+myapp/__pycache__
