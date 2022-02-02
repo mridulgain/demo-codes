@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_$(q#26yg1fm79$chf&pu10a&5&fa3#(u1(3sib+ylcv$it(d1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = ['127.0.0.1', 'smtp.google.com',]
 
 
 # Application definition
@@ -122,3 +122,21 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# chap02 email 
+# console 
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# mailtrap smtp server
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = '0d9f268f4de75b'
+# EMAIL_HOST_PASSWORD = '31a3479861eb6e'
+# EMAIL_PORT = '2525'
+# EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testmail181202@gmail.com'
+EMAIL_HOST_PASSWORD = 'PassWord123'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
