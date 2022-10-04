@@ -15,10 +15,10 @@
     <div id="record"></div>
 
     <script>
-        var sum = 0
+        let sum = 0
         function f(){
             if(isNaN(amount.value)){
-                console.log("nope")
+                console.log("Not a valid number")
                 reset()
             }else{
                 record.innerHTML += "<br>" + item.value + " &nbsp " + amount.value  
