@@ -4,7 +4,10 @@
 // O(m+n)
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func findDiff(l1, l2 []int) (res []int) {
 	s1 := make(map[int]bool)
@@ -33,7 +36,7 @@ func findDiff(l1, l2 []int) (res []int) {
 	return res
 }
 
-func main() {
+func Test_diff(t *testing.T) {
 	l1 := []int{1, 1, 2, 5, 4, 6}
 	l2 := []int{1, 3, 3, 5, 6, 8}
 	ans := findDiff(l1, l2)

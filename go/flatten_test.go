@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"strconv"
+	"testing"
 )
 
 // Write a program to Map Flattening.
@@ -32,7 +33,7 @@ const inputJson = `{
 //  "test_tel_tags_1": "world"
 // }
 
-func main() {
+func Test_flatten(t *testing.T) {
 	inputData := make(map[string]interface{})
 	err := json.Unmarshal([]byte(inputJson), &inputData)
 	if err != nil {
