@@ -1,1 +1,1 @@
-Each branch of this repo is dedicated to a particular language/topic.
+Each directory of this repository is dedicated to a particular language/topic.
