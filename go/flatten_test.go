@@ -52,15 +52,23 @@ func flatten(prefix string, data map[string]interface{}, output map[string]inter
 	}
 
 	for key, value := range data {
-		switch value.(type) {
+		switch val := value.(type) {
 		case map[string]interface{}: // object
-			flatten(prefix+key, value.(map[string]interface{}), output)
+			flatten(prefix+key, val, output)
 		case []interface{}: // array
-			for i, v := range value.([]interface{}) {
+			for i, v := range val {
 				output[prefix+key+"_"+strconv.Itoa(i)] = v
 			}
 		default:
-			output[prefix+key] = value
+			output[prefix+key] = val
 		}
 	}
 }
+
+// ❯ go test -v -run Test_flatten
+// === RUN   Test_flatten
+// map[email:xxxx@avesha.io name:Piyush Singariya password:xxxxx phone_number:+91907xxxxxx test:map[id:1234 tel:map[tags:[hello world]]]]
+// map[email:xxxx@avesha.io name:Piyush Singariya password:xxxxx phone_number:+91907xxxxxx test_id:1234 test_tel_tags_0:hello test_tel_tags_1:world]
+// --- PASS: Test_flatten (0.00s)
+// PASS
+// ok      github.com/mridulgain/demo-codes/go     0.607s
