@@ -1,0 +1,28 @@
+# Gitea version 12.1.3 in any Kubernetes cluster whose version is >= v1.33.0
+# Gitea version 10.4.1 in any Kubernetes cluster whose version is >= v1.31.0 && < v1.33.0
+---
+apiVersion: lib.projectsveltos.io/v1beta1
+kind: Classifier
+metadata:
+  name: deploy-gitea-12-1-3
+spec:
+  classifierLabels:
+  - key: gitea
+    value: v12-1-3
+  kubernetesVersionConstraints:
+  - comparison: GreaterThanOrEqualTo
+    version: 1.33.0
+---
+apiVersion: lib.projectsveltos.io/v1beta1
+kind: Classifier
+metadata:
+  name: deploy-gitea-10-4-1
+spec:
+  classifierLabels:
+  - key: gitea
+    value: v10-4-1
+  kubernetesVersionConstraints:
+  - comparison: GreaterThanOrEqualTo
+    version: 1.31.0
+  - comparison: LessThan
+    version: 1.33.0

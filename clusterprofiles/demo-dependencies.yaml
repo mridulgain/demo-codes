@@ -1,0 +1,57 @@
+---
+apiVersion: config.projectsveltos.io/v1beta1
+kind: ClusterProfile
+metadata:
+  name: demo-ingress-nginx
+spec:
+  clusterSelector:
+    matchExpressions:
+      - key: env
+        operator: In
+        values:
+        - uat
+        - qa
+  syncMode: ContinuousWithDriftDetection
+  helmCharts:
+  - repositoryURL: https://kubernetes.github.io/ingress-nginx
+    repositoryName: ingress-nginx
+    chartName: ingress-nginx/ingress-nginx
+    chartVersion: 4.11.3
+    releaseName: ingress-nginx
+    releaseNamespace: ingress-nginx
+    helmChartAction: Install
+---
+apiVersion: config.projectsveltos.io/v1beta1
+kind: ClusterProfile
+metadata:
+  name: demo-httpbin-app
+spec:
+  clusterSelector:
+    matchExpressions:
+      - key: env
+        operator: In
+        values:
+        - uat
+        - qa
+  dependsOn:
+  - demo-ingress-nginx
+  helmCharts:
+  - repositoryURL: https://matheusfm.dev/charts
+    repositoryName: matheusfm
+    chartName: matheusfm/httpbin
+    chartVersion: 0.1.1
+    releaseName: httpbin
+    releaseNamespace: demo
+    helmChartAction: Install
+    values: |
+      service:
+        type: ClusterIP
+        port: 8080
+      ingress:
+        enabled: true
+        className: nginx
+        hosts:
+          - host: httpbin.demo.local
+            paths:
+              - path: /
+                pathType: Prefix
