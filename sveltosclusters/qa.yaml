@@ -1,9 +1,0 @@
-apiVersion: lib.projectsveltos.io/v1beta1
-kind: SveltosCluster
-metadata:
-  name: sveltos-qa
-  namespace: kcd
-  labels:
-    env: qa
-spec:
-  kubeconfigName:  sveltos-qa-kubeconfig
