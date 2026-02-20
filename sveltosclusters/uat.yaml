@@ -1,0 +1,9 @@
+apiVersion: lib.projectsveltos.io/v1beta1
+kind: SveltosCluster
+metadata:
+  name: sveltos-uat
+  namespace: kcd
+  labels:
+    env: uat
+spec:
+  kubeconfigName:  sveltos-uat-kubeconfig
