@@ -1,0 +1,14 @@
+apiVersion: lib.projectsveltos.io/v1beta1
+kind: EventSource
+metadata:
+  name: sveltos-service
+spec:
+  collectResources: true
+  resourceSelectors:
+  - group: ""
+    version: "v1"
+    kind: "Service"
+    labelFilters:
+    - key: sveltos
+      operation: Equal
+      value: fv

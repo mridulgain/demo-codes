@@ -1,0 +1,45 @@
+---
+apiVersion: lib.projectsveltos.io/v1beta1
+kind: EventTrigger
+metadata:
+  name: service-network-policy
+spec:
+  sourceClusterSelector:
+    matchLabels:
+      env: dev
+  eventSourceName: sveltos-service
+  oneForEvent: true
+  policyRefs:
+  - name: network-policy
+    namespace: default
+    kind: ConfigMap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: network-policy
+  namespace: default
+  annotations:
+    projectsveltos.io/instantiate: ok # this annotation is what tells Sveltos to instantiate this ConfigMap
+data:
+  networkpolicy.yaml: |
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: front-{{ .Resource.metadata.name }}
+      namespace: {{ .Resource.metadata.namespace }}
+    spec:
+      podSelector:
+        matchLabels:
+          {{ range $key, $value := .Resource.spec.selector }}
+          {{ $key }}: {{ $value }}
+          {{ end }}
+      ingress:
+        - from:
+          - podSelector:
+              matchLabels:
+                app: internal
+          ports:
+            {{ range $port := .Resource.spec.ports }}
+            - port: {{ $port.port }}
+            {{ end }}
