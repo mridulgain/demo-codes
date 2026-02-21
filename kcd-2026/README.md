@@ -3,3 +3,4 @@ Here are the manifests used in the demo
 - clusterprofile creation, adding a new cluster to the fleet
 - classifier example: automate label addition based on k8s version
 - event source & event trigger example
+TBD: add steps & commands
