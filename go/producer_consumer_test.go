@@ -12,7 +12,7 @@ func producer(buffer chan int, wg *sync.WaitGroup) {
 		fmt.Println("produced: ", i*2)
 		buffer <- i * 2
 	}
-	close(buffer)
+	close(buffer) // tell consumers no more data is coming
 }
 
 func consumer(buffer chan int, wg *sync.WaitGroup) {
