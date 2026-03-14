@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"sync"
+	"testing"
 )
 
-func main() {
+func TestProducerConsumer2(t *testing.T) {
 	n := 10
 	jobs := make(chan int) // The "Buffer"
 	var wg sync.WaitGroup
@@ -36,3 +37,5 @@ func main() {
 
 	wg.Wait()
 }
+
+// go test -v -run TestProducerConsumer2

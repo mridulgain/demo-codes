@@ -13,7 +13,7 @@ type Task struct {
 
 // define how to process that task
 func (t *Task) process() {
-	// log.Printf("Processing task with id: %d\n", t.id)
+	log.Printf("\tProcessing task with id: %d\n", t.id)
 	// simulating task process
 	time.Sleep(2 * time.Second)
 }

@@ -19,3 +19,6 @@ func Test_worrkerPool(t *testing.T) {
 	workerPool.Run()
 	log.Printf("All worker has finished\n")
 }
+
+// ❯ cd go
+// ❯ go test -v -run Test_worrkerPool
