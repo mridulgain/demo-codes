@@ -1,15 +1,15 @@
 // https://leetcode.com/problems/rotting-oranges/
 package amazon
 
-type Item struct {
+type Item2 struct {
 	x, y int
 }
-type Queue []*Item
+type Queue []*Item2
 
-func (q *Queue) insert(x *Item) {
+func (q *Queue) insert(x *Item2) {
 	*q = append(*q, x)
 }
-func (q *Queue) pop() *Item {
+func (q *Queue) pop() *Item2 {
 	tmp := *q
 	item := tmp[0]
 	if len(*q) == 1 {
@@ -24,7 +24,7 @@ func (q *Queue) size() int { return len(*q) }
 func orangesRotting(grid [][]int) int {
 	dq := &Queue{}
 	fresh := 0
-	delta := []Item{{0, 1}, {0, -1}, {1, 0}, {-1, 0}}
+	delta := []Item2{{0, 1}, {0, -1}, {1, 0}, {-1, 0}}
 	row, col := len(grid), len(grid[0])
 	// fmt.Println(row,col)
 	for i := range grid {
@@ -33,7 +33,7 @@ func orangesRotting(grid [][]int) int {
 				fresh += 1
 			}
 			if grid[i][j] == 2 {
-				dq.insert(&Item{i, j})
+				dq.insert(&Item2{i, j})
 			}
 		}
 	}
@@ -52,7 +52,7 @@ func orangesRotting(grid [][]int) int {
 					// fmt.Println(m,n)
 					grid[m][n] = 2
 					fresh -= 1
-					dq.insert(&Item{m, n})
+					dq.insert(&Item2{m, n})
 				}
 			}
 		}
