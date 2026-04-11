@@ -22,9 +22,6 @@ func fib_memo(n int) int {
 
 	var helper func(int) int
 	helper = func(n int) int {
-		if n <= 1 {
-			return dp[n]
-		}
 		if dp[n] != -1 {
 			return dp[n]
 		}
