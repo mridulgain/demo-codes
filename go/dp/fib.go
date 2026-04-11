@@ -8,6 +8,9 @@ func fib_recurr(n int) int {
 }
 
 func fib_memo(n int) int {
+	if n < 1 {
+		return n
+	}
 	dp := make([]int, n+1)
 	func() {
 		dp[0] = 0
@@ -33,6 +36,9 @@ func fib_memo(n int) int {
 }
 
 func fib_tabulation(n int) int {
+	if n < 1 {
+		return n
+	}
 	dp := make([]int, n+1)
 	dp[0] = 0
 	dp[1] = 1
@@ -40,4 +46,15 @@ func fib_tabulation(n int) int {
 		dp[i] = dp[i-1] + dp[i-2]
 	}
 	return dp[n]
+}
+
+func fib_tabulation_memory_saver(n int) int {
+	if n < 1 {
+		return n
+	}
+	e1, e2 := 0, 1
+	for i := 2; i <= n; i++ {
+		e1, e2 = e2, e1+e2
+	}
+	return e2
 }

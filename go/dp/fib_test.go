@@ -31,6 +31,13 @@ var tests = []struct {
 		want: 55,
 	},
 	{
+		name: "test2",
+		args: args{
+			n: 0,
+		},
+		want: 0,
+	},
+	{
 		name: "test5",
 		args: args{
 			n: 40,
@@ -91,6 +98,16 @@ func TestFibTabulation(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := fib_tabulation(tt.args.n); got != tt.want {
+				t.Errorf("fib_tabulation() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestFibTabulationMemorySaver(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := fib_tabulation_memory_saver(tt.args.n); got != tt.want {
 				t.Errorf("fib_tabulation() = %v, want %v", got, tt.want)
 			}
 		})
