@@ -7,55 +7,39 @@ import (
 
 // go test -v ./dp -timeout=5s -run TestfibMemo
 
-type args struct {
-	n int
-}
-
 var tests = []struct {
 	name string
-	args args
+	args int
 	want int
 }{
 	{
 		name: "test0",
-		args: args{
-			n: 1,
-		},
+		args: 1,
 		want: 1,
 	},
 	{
 		name: "test1",
-		args: args{
-			n: 10,
-		},
+		args: 10,
 		want: 55,
 	},
 	{
 		name: "test2",
-		args: args{
-			n: 0,
-		},
+		args: 0,
 		want: 0,
 	},
 	{
 		name: "test5",
-		args: args{
-			n: 40,
-		},
+		args: 40,
 		want: 102334155,
 	},
 	{
 		name: "test6",
-		args: args{
-			n: 45,
-		},
+		args: 45,
 		want: 1134903170,
 	},
 	{
 		name: "test7",
-		args: args{
-			n: 50,
-		},
+		args: 50,
 		want: 12586269025,
 	},
 }
@@ -68,7 +52,7 @@ func TestFibRecurr(t *testing.T) {
 			var got int
 
 			go func() {
-				got = fib_recurr(tt.args.n)
+				got = fib_recurr(tt.args)
 				done <- true
 			}()
 
@@ -87,7 +71,7 @@ func TestFibRecurr(t *testing.T) {
 func TestFibMemo(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := fib_memo(tt.args.n); got != tt.want {
+			if got := fib_memo(tt.args); got != tt.want {
 				t.Errorf("fib_memo() = %v, want %v", got, tt.want)
 			}
 		})
@@ -97,7 +81,7 @@ func TestFibMemo(t *testing.T) {
 func TestFibTabulation(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := fib_tabulation(tt.args.n); got != tt.want {
+			if got := fib_tabulation(tt.args); got != tt.want {
 				t.Errorf("fib_tabulation() = %v, want %v", got, tt.want)
 			}
 		})
@@ -107,7 +91,7 @@ func TestFibTabulation(t *testing.T) {
 func TestFibTabulationMemorySaver(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := fib_tabulation_memory_saver(tt.args.n); got != tt.want {
+			if got := fib_tabulation_memory_saver(tt.args); got != tt.want {
 				t.Errorf("fib_tabulation() = %v, want %v", got, tt.want)
 			}
 		})
