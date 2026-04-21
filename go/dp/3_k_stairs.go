@@ -7,7 +7,7 @@ func k_stairs_tabulation(heights []int, k int) int {
 	dp := make([]int, n)
 	dp[0] = 0
 	for i := 1; i < n; i++ {
-		minEffort := int(math.Inf(1))
+		minEffort := math.MaxInt
 		for j := 1; j <= k; j++ {
 			if i-j < 0 {
 				break
